@@ -1,5 +1,13 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+
+const navigationLinks = [
+  {title: 'Home', href: '/' },
+  {title: 'Solar Map', href: '/' },
+  {title: 'News', href: '/' },
+  {title: 'Education', href: '/education' },
+  {title: 'Games', href: '/' },
+];
 
 export default function NavBar() {
   return (
@@ -23,24 +31,11 @@ export default function NavBar() {
 
           {/* Desktop navigation */}
           <div className="hidden md:ml-6 md:flex md:space-x-8">
-            <a href="/" className="inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium text-white">
-              Home
-            </a>
-            <a href="#" className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-400 hover:border-gray-300 hover:text-gray-200">
-              Solar Map
-            </a>
-            <a href="/" className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-400 hover:border-gray-300 hover:text-gray-200">
-              News
-            </a>
-            <a href="/" className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-400 hover:border-gray-300 hover:text-gray-200">
-              Satellite Tracker
-            </a>
-            <a href="/education" className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-400 hover:border-gray-300 hover:text-gray-200">
-              Education
-            </a>
-            <a href="/" className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-400 hover:border-gray-300 hover:text-gray-200">
-              Games
-            </a>
+            {navigationLinks.map((nav) => (
+               <a key={nav.title} href={nav.href} className="hover:underline hover:underline-offset-8 inline-flex items-center px-4 pt-1 text-sm font-medium text-white/70 hover:text-white hover-rocket">
+                {nav.title}
+               </a>
+            ))}
           </div>
 
           {/* Profile - desktop only */}
@@ -82,26 +77,12 @@ export default function NavBar() {
           </div>
 
           <div className="flex-1 flex flex-col mt-10 space-y-8 px-8">
-            <DisclosureButton as="a" href="/" className="text-2xl font-medium text-white hover:text-red-500 transition-colors">
-              Home
+            {navigationLinks.map((nav) => (
+              <DisclosureButton key={nav.title} as="a" href={nav.href} className="text-2xl font-medium text-white hover:text-red-500 transition-colors">
+              {nav.title}
             </DisclosureButton>
-            <DisclosureButton as="a" href="#" className="text-2xl font-medium text-white hover:text-red-500 transition-colors">
-              Solar Map
-            </DisclosureButton>
-            <DisclosureButton as="a" href="#" className="text-2xl font-medium text-white hover:text-red-500 transition-colors">
-              News
-            </DisclosureButton>
-            <DisclosureButton as="a" href="#" className="text-2xl font-medium text-white hover:text-red-500 transition-colors">
-              Satellite Tracker
-            </DisclosureButton>
-            <DisclosureButton as="a" href="/education" className="text-2xl font-medium text-white hover:text-red-500 transition-colors">
-              Education
-            </DisclosureButton>
-            <DisclosureButton as="a" href="#" className="text-2xl font-medium text-white hover:text-red-500 transition-colors">
-              Games
-            </DisclosureButton>
+            ))}
           </div>
-
           <div className="p-6 border-t border-slate-700/40 space-y-3">
             <DisclosureButton as="a" href="#" className="block text-center py-3 text-base text-gray-400 hover:text-white hover:bg-slate-800 rounded-md transition-colors">
               Settings
