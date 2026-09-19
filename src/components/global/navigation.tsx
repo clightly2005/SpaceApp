@@ -13,7 +13,7 @@ export default function NavBar() {
   return (
     <Disclosure as="nav" className="fixed top-0 w-full z-50 bg-black/60 shadow-sm">
       <div className="mx-auto max-w-7xl backdrop-filter backdrop-blur-lg px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 md:justify-between justify-center items-center">
+        <div className="flex h-12 md:justify-between justify-center items-center">
           {/* Mobile menu button */}
           <div className="absolute left-2 flex items-center md:hidden">
             <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-indigo-600 focus:outline-hidden focus:ring-inset">

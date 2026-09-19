@@ -52,8 +52,8 @@ export default function Hero({imageUrl}: props) {
           {/*text overlay*/}
           <div className="absolute z-10 text-center pointer-events-none"
             style={{ opacity: textOpacity, transition: "opacity 0.1s ease-out",}}>
-            <h1 className="text-5xl md:text-7xl uppercase tracking-widest text-white drop-shadow-2xl font-serif"> Welcome to Luna</h1>
-            <p className="mt-4 text-sm md:text-base uppercase tracking-[0.25em] text-white/60">  Scroll to explore</p>
+            <h1 className="text-5xl md:text-5xl bg-neutral-900/10 p-2 rounded uppercase tracking-widest text-white drop-shadow-2xl font-serif"> Welcome to Lunaveristy</h1>
+            <p className="mt-4 text-sm md:text-base uppercase tracking-[0.25em] text-white/60">Scroll to explore</p>
           </div>
           {/*scroll hint*/}
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 pointer-events-none"
